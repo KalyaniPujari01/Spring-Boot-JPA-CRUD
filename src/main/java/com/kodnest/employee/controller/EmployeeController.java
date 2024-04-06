@@ -26,6 +26,11 @@ public class EmployeeController {
 	}
 	
 	
+	@GetMapping("/getEmpById/{empid}")
+	public Employee getEmployeeById(@PathVariable int empid) {
+		return empser.findEmpById(empid);
+	}
+	
 	@PostMapping("/saveEmployee")
 	public Employee saveEmployee(@RequestBody Employee emp) {
 		return empser.save(emp);
